@@ -15,7 +15,7 @@ Repositório de aplicativos comunitários e customizados para o ecossistema **Um
 
 ## 🚀 Como Instalar no seu Umbrel
 
-Para adicionar esta loja ao seu servidor Umbrel, você não precisa usar o terminal. Siga os passos abaixo diretamente pela interface gráfica:
+Para adicionar esta loja ao seu servidor Umbrel, siga os passos abaixo diretamente pela interface gráfica:
 
 1. Acesse o painel web do seu **Umbrel** no navegador.
 2. Abra o aplicativo da **App Store**.
