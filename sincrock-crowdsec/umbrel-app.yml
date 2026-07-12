@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: crowdsec
+name: CrowdSec
+tagline: Defesa colaborativa contra ataques de força bruta e invasões.
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/icons/crowdsec.svg
+category: Security
+version: "1.0.0"
+port: 4200
+description: >-
+  O CrowdSec analisa os logs dos seus aplicativos (como Jellyfin e Nginx) 
+  para detectar e bloquear IPs maliciosos automaticamente.
+developer: CrowdSec
+website: https://crowdsec.net
+submitter: sincrock
+repo: https://github.com/sincrock/umbrel-app-store
+support: https://github.com/sincrock/umbrel-app-store/issues
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  Versão inicial do CrowdSec integrada para coleta de logs centralizada.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

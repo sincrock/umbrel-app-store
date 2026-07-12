@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-crowdsec_server_1
+      APP_PORT: 8080
+
+  server:
+    image: crowdsecurity/crowdsec:latest
+    restart: on-failure
+    user: "0:0"
+    environment:
+      - DISABLE_ONLINE_API=false
+    volumes:
+      - "/data/umbrel-os/apps/sincrock-crowdsec/data/config:/etc/crowdsec"
+      - "/data/umbrel-os/apps/sincrock-crowdsec/data/data:/var/lib/crowdsec"
+      - "/data/umbrel-os/apps/sincrock-crowdsec/data/logs:/mnt/logs:ro"
