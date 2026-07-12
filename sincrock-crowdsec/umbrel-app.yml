@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: crowdsec
+id: sincrock-crowdsec
 name: CrowdSec
 tagline: Defesa colaborativa contra ataques de força bruta e invasões.
 icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/icons/crowdsec.svg

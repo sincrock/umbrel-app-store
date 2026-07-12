@@ -15,20 +15,18 @@ Repositório de aplicativos comunitários e customizados para o ecossistema **Um
 
 ## 🚀 Como Instalar no seu Umbrel
 
-Para adicionar esta loja ao seu servidor Umbrel, siga os passos abaixo:
+Para adicionar esta loja ao seu servidor Umbrel, você não precisa usar o terminal. Siga os passos abaixo diretamente pela interface gráfica:
 
-1. Acesse o seu servidor Umbrel via **SSH**:
-```bash
-ssh umbrel@umbrel.local
-```
-*(Substitua `umbrel.local` pelo IP do seu servidor se necessário)*
-
-2. Execute o comando oficial do Umbrel para adicionar repositórios de terceiros:
-```bash
-sudo umbrel-app-store repo add https://github.com/sincrock/umbrel-app-store.git
+1. Acesse o painel web do seu **Umbrel** no navegador.
+2. Abra o aplicativo da **App Store**.
+3. No canto superior direito, clique no menu de **três pontinhos (...)**.
+4. Selecione a opção **Community App Stores**.
+5. Insira a URL do repositório abaixo e clique em **Add**:
+```text
+https://github.com/sincrock/umbrel-app-store
 ```
 
-3. Abra a interface web do seu Umbrel, acesse a **App Store** e os novos aplicativos estarão disponíveis para instalação com um único clique!
+Pronto! Os novos aplicativos estarão disponíveis na loja para instalação com um único clique.
 
 ---
 
