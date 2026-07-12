@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-clamav_server_1
+      APP_PORT: 3310
+
+  server:
+    image: clamav/clamav-debian:latest
+    restart: on-failure
+    user: "root"
+    volumes:
+      - "/data/umbrel-os/home/umbrel/umbrel/home/Downloads:/data:ro"
+    entrypoint: ["sh", "-c", "freshclam && tail -f /dev/null"]

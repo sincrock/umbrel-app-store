@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: sincrock-clamav
+name: ClamAV Scanner
+tagline: Proteja seu Umbrel com um antivírus open-source potente.
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/icons/clam-av.svg
+category: Security
+version: "1.0.0"
+port: 4100
+description: >-
+  Antivírus open-source para monitorar, agendar e escanear arquivos 
+  diretamente no armazenamento central do seu Umbrel de forma nativa.
+developer: ClamAV
+website: https://www.clamav.net
+submitter: sincrock
+repo: https://github.com/sincrock/umbrel-app-store
+support: https://github.com/sincrock/umbrel-app-store/issues
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  Versão inicial do ClamAV customizado para escanear a pasta de Downloads global.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
