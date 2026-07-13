@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: sincrock-clamav_server_1
+      APP_HOST: server
       APP_PORT: 3310
 
   server:
@@ -15,4 +15,9 @@ services:
       - "${UMBREL_ROOT}/home/Documents:/data/documents:ro"
       - "${UMBREL_ROOT}/home/Photos:/data/photos:ro"
       - "${UMBREL_ROOT}/home/Videos:/data/videos:ro"
-    entrypoint: ["sh", "-c", "freshclam && tail -f /dev/null"]
+    healthcheck:
+      test: ["CMD", "clamdscan", "--ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
