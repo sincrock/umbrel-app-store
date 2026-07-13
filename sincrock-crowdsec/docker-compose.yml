@@ -12,7 +12,8 @@ services:
     user: "0:0"
     environment:
       - DISABLE_ONLINE_API=false
+      - COLLECTIONS=crowdsecurity/linux crowdsecurity/nginx crowdsecurity/base-http-scenarios
     volumes:
-      - "/data/umbrel-os/apps/sincrock-crowdsec/data/config:/etc/crowdsec"
-      - "/data/umbrel-os/apps/sincrock-crowdsec/data/data:/var/lib/crowdsec"
-      - "/data/umbrel-os/apps/sincrock-crowdsec/data/logs:/mnt/logs:ro"
+      - "${APP_DATA_DIR}/data/config:/etc/crowdsec"
+      - "${APP_DATA_DIR}/data/data:/var/lib/crowdsec"
+      - "${APP_DATA_DIR}/data/logs:/mnt/logs:ro"
