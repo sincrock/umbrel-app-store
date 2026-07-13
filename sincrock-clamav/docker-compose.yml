@@ -11,5 +11,8 @@ services:
     restart: on-failure
     user: "root"
     volumes:
-      - "/data/umbrel-os/home/umbrel/umbrel/home/Downloads:/data:ro"
+      - "${UMBREL_ROOT}/home/Downloads:/data/downloads:ro"
+      - "${UMBREL_ROOT}/home/Documents:/data/documents:ro"
+      - "${UMBREL_ROOT}/home/Photos:/data/photos:ro"
+      - "${UMBREL_ROOT}/home/Videos:/data/videos:ro"
     entrypoint: ["sh", "-c", "freshclam && tail -f /dev/null"]
