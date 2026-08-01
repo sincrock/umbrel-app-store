@@ -14,8 +14,7 @@ website: https://www.clamav.net
 submitter: sincrock
 repo: https://github.com/sincrock/umbrel-app-store
 support: https://github.com/sincrock/umbrel-app-store/issues
-gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
+gallery: []
 releaseNotes: >-
   Versão inicial do ClamAV customizado para escanear a pasta de Downloads global.
 dependencies: []

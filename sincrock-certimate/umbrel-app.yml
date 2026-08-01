@@ -1,0 +1,23 @@
+manifestVersion: 1
+id: sincrock-certimate
+name: Certimate
+tagline: Automação e gerenciamento de certificados SSL/TLS
+icon: https://raw.githubusercontent.com/certimate-go/certimate/main/ui/public/logo.svg
+category: Developer
+version: "1.0.0"
+port: 4300
+description: >-
+  O Certimate é uma ferramenta de código aberto para automação e gerenciamento do ciclo de vida de certificados SSL/TLS. 
+  Ele permite emitir, renovar e implantar certificados automaticamente em diversos provedores de DNS e servidores.
+developer: Certimate Team
+website: https://github.com/certimate-go/certimate
+submitter: sincrock
+repo: https://github.com/certimate-go/certimate
+support: https://github.com/certimate-go/certimate/issues
+gallery: []
+releaseNotes: >-
+  Versão inicial do Certimate customizado para gerenciamento de certificados.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

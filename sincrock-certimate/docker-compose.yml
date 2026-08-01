@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: server
+      APP_PORT: 8090
+
+  server:
+    image: certimate/certimate:latest
+    restart: unless-stopped
+    user: "0:0"
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
+      - "${APP_DATA_DIR}/data:/app/pb_data"
