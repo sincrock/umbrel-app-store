@@ -4,7 +4,7 @@ name: CrowdSec
 tagline: Defesa colaborativa contra ataques de força bruta e invasões.
 icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/icons/crowdsec.svg
 category: Security
-version: "1.0.2"
+version: "1.0.3"
 port: 4200
 description: >-
   O CrowdSec analisa os logs dos seus aplicativos (como Jellyfin e Nginx) 

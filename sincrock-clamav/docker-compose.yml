@@ -3,11 +3,13 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: server
-      APP_PORT: 3310
+      APP_HOST: sincrock-clamav_web_1
+      APP_PORT: 80
+    container_name: sincrock-clamav_app_proxy_1
 
   server:
-    image: clamav/clamav-debian:latest
+    image: clamav/clamav-debian:1.5
+    container_name: sincrock-clamav_server_1
     restart: on-failure
     user: "root"
     volumes:
@@ -21,3 +23,14 @@ services:
       timeout: 10s
       retries: 3
       start_period: 60s
+
+  web:
+    image: python:3.10-alpine
+    container_name: sincrock-clamav_web_1
+    restart: on-failure
+    user: root
+    volumes:
+      - ${APP_DATA_DIR}/web:/app
+      - ${UMBREL_ROOT}/app-data/transmission/data/config:/data/logs:ro
+    working_dir: /app
+    command: sh -c "pip install flask && python app.py"

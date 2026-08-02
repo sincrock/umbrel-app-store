@@ -1,0 +1,5 @@
+source: docker
+container_name:
+  - transmission_server_1
+labels:
+  type: transmission
