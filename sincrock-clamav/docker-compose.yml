@@ -8,7 +8,7 @@ services:
     container_name: sincrock-clamav_app_proxy_1
 
   server:
-    image: clamav/clamav-debian:1.5
+    image: clamav/clamav-debian:1.5.4@sha256:8117550b0e762eeabe5376c9f6f9c6adbf1a2da50c1bc70c08ae600930817523
     container_name: sincrock-clamav_server_1
     restart: on-failure
     user: "root"

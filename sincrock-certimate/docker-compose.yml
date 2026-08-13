@@ -8,7 +8,7 @@ services:
     container_name: sincrock-certimate_app_proxy_1
 
   server:
-    image: certimate/certimate:v0.4
+    image: certimate/certimate:v0.4@sha256:cd294518fad813291e001672dcbd2a49a3ba6c5af8f4bcb0a768cedb9c61f4be
     container_name: sincrock-certimate_server_1
     restart: unless-stopped
     volumes:
