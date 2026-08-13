@@ -1,0 +1,18 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-waha_server_1
+      APP_PORT: 3000
+    container_name: sincrock-waha_app_proxy_1
+
+  server:
+    image: devlikeapro/waha:arm-2026.7.2@sha256:d5a93bd9db570955cc10d2d95d33c4f06d07b3dc0150dcdd5fb600cf9857d290
+    container_name: sincrock-waha_server_1
+    restart: on-failure
+    user: "0:0"
+    env_file:
+      - ${APP_DATA_DIR}/.env
+    volumes:
+      - ${APP_DATA_DIR}/.env:/app/.env
+      - ${APP_DATA_DIR}/data/sessions:/app/.sessions
+      - ${APP_DATA_DIR}/data/media:/app/.media

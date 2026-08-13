@@ -2,9 +2,9 @@ manifestVersion: 1
 id: sincrock-clamav
 name: ClamAV Scanner
 tagline: Proteja seu Umbrel com um antivírus open-source potente.
-icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/icons/clam-av.svg
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-clamav/logo.svg
 category: Security
-version: "1.0.3"
+version: "1.5.4"
 port: 4100
 description: >-
   Antivírus open-source para monitorar, agendar e escanear arquivos 
