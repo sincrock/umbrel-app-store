@@ -2,7 +2,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: sincrock-opentelemetry_server_1
-      APP_PORT: 84318
+      APP_PORT: 14318
     container_name: sincrock-opentelemetry_app_proxy_1
 
   server:
@@ -15,4 +15,4 @@ services:
     command: ["--config=/etc/otelcol-contrib/config.yaml"]
     ports:
       - "4317:4317" # OTLP gRPC
-      - "84318:4318" # OTLP HTTP
+      - "14318:4318" # OTLP HTTP
