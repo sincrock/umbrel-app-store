@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: sincrock-opentelemetry
+name: OpenTelemetry Collector
+tagline: "Receba, processe e exporte dados de métricas, logs e traces"
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-opentelemetry/logo.png
+category: networking
+version: "0.158.0"
+port: 4318
+description: >-
+  O OpenTelemetry Collector oferece um mecanismo neutro em relação a fornecedores para receber, 
+  processar e exportar dados de telemetria. É compatível com OTLP, Prometheus, Jaeger e mais.
+developer: OpenTelemetry
+website: https://opentelemetry.io
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/open-telemetry/opentelemetry-collector-contrib
+support: https://github.com/open-telemetry/opentelemetry-collector-contrib/issues
+gallery: []
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+defaultAppConfig:
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://localhost:4317"
