@@ -1,0 +1,18 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-opentelemetry_server_1
+      APP_PORT: 4318
+    container_name: sincrock-opentelemetry_app_proxy_1
+
+  server:
+    image: otel/opentelemetry-collector-contrib:0.158.0-arm64@sha256:51e1afc9d762a359387723170be5cecccad2c09e73a5a2061361c62c60855ccf
+    container_name: sincrock-opentelemetry_server_1
+    restart: on-failure
+    user: "0:0"
+    volumes:
+      - ${APP_DATA_DIR}/data/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml:ro
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    ports:
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
