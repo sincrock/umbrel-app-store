@@ -16,19 +16,19 @@ exporters:
     verbosity: detailed
   prometheus:
     endpoint: 0.0.0.0:8889
-  otlp/jaeger:
-    endpoint: jaeger:4317
+  otlp_grpc/jaeger:
+    endpoint: 192.168.31.7:14317
     tls:
       insecure: true
-  otlphttp:
-    endpoint: http://loki:3100/otlp
+  otlp_http:
+    endpoint: http://192.168.31.7:3100/otlp
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/jaeger, debug]
+      exporters: [otlp_grpc/jaeger, debug]
     metrics:
       receivers: [otlp]
       processors: [batch]
@@ -36,4 +36,4 @@ service:
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlphttp, debug]
+      exporters: [otlp_http, debug]
