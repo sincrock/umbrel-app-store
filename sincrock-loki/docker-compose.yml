@@ -2,7 +2,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: sincrock-loki_server_1
-      APP_PORT: 83100
+      APP_PORT: 13100
     container_name: sincrock-loki_app_proxy_1
 
   server:
@@ -11,7 +11,7 @@ services:
     restart: on-failure
     user: "0:0"
     ports:
-      - "83100:3100"
+      - "13100:3100"
     volumes:
       - ${APP_DATA_DIR}/data/loki-config.yaml:/etc/loki/local-config.yaml:ro
       - ${APP_DATA_DIR}/data/data:/tmp/loki
