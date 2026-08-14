@@ -2,7 +2,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: sincrock-prometheus_server_1
-      APP_PORT: 89090
+      APP_PORT: 19090
     container_name: sincrock-prometheus_app_proxy_1
 
   server:
@@ -11,7 +11,7 @@ services:
     restart: on-failure
     user: "0:0"
     ports:
-      - "89090:9090"
+      - "19090:9090"
     volumes:
       - ${APP_DATA_DIR}/data/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - ${APP_DATA_DIR}/data/data:/prometheus
