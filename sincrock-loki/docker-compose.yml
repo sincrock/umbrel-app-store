@@ -1,0 +1,23 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-loki_server_1
+      APP_PORT: 83100
+    container_name: sincrock-loki_app_proxy_1
+
+  server:
+    image: grafana/loki:3.7.6@sha256:efd47c67f9bac88ca29bcf8cb997d9ab29d1848bd0aff579282295542a745952
+    container_name: sincrock-loki_server_1
+    restart: on-failure
+    user: "0:0"
+    ports:
+      - "83100:3100"
+    volumes:
+      - ${APP_DATA_DIR}/data/loki-config.yaml:/etc/loki/local-config.yaml:ro
+      - ${APP_DATA_DIR}/data/data:/tmp/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:83100/ready || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

@@ -2,7 +2,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: sincrock-opentelemetry_server_1
-      APP_PORT: 14318
+      APP_PORT: 80
     container_name: sincrock-opentelemetry_app_proxy_1
 
   server:
@@ -11,8 +11,9 @@ services:
     restart: on-failure
     user: "0:0"
     volumes:
-      - ${APP_DATA_DIR}/data/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml:ro
-    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+      - ${APP_DATA_DIR}/data/otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+    command: ["--config=/etc/otel-collector-config.yaml"]
     ports:
       - "4317:4317" # OTLP gRPC
-      - "14318:4318" # OTLP HTTP
+      - "4318:4318" # OTLP HTTP
+      - "8889:8889" # Prometheus metrics

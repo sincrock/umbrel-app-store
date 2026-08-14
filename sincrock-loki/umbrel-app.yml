@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: sincrock-loki
+name: Loki
+tagline: "Receba, processe e exporte dados de métricas, logs e traces"
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-loki/logo.png
+category: "Developer Tools"
+version: "3.7.6"
+port: 3100
+description: >-
+  O Loki é uma ferramenta de observabilidade que ajuda a coletar, armazenar e consultar logs em ambientes de microserviços.
+developer: OpenTelemetry
+website: https://www.loki.com/
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/grafana/loki
+support: https://github.com/grafana/loki/issues
+gallery:
+  - https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-loki/1.jpg
+  - https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-loki/2.jpg
+  - https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-loki/3.jpg
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
