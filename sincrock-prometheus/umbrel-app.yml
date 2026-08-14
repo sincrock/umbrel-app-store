@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: sincrock-prometheus
+name: Prometheus
+tagline: "Receba, processe e exporte dados de métricas, logs e traces"
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-prometheus/logo.png
+category: "Developer Tools"
+version: "3.13.2"
+port: 9090
+description: >-
+  O Prometheus é uma ferramenta de monitoramento e alerta que ajuda a coletar e armazenar métricas em ambientes de microserviços.
+developer: OpenTelemetry
+website: https://prometheus.io/
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/prometheus/prometheus
+support: https://github.com/prometheus/prometheus/issues
+gallery: []
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

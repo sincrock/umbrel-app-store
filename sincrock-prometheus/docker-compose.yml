@@ -1,0 +1,23 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-prometheus_server_1
+      APP_PORT: 89090
+    container_name: sincrock-prometheus_app_proxy_1
+
+  server:
+    image: prom/prometheus:v3.13.2-distroless@sha256:64f71bb84e03c855948418b0fc5dea53e9543d8e3fc9931598f583805507f05e
+    container_name: sincrock-prometheus_server_1
+    restart: on-failure
+    user: "0:0"
+    ports:
+      - "89090:9090"
+    volumes:
+      - ${APP_DATA_DIR}/data/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ${APP_DATA_DIR}/data/data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.enable-lifecycle'

@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: sincrock-jaeger
+name: Jaeger
+tagline: "Receba, processe e exporte dados de métricas, logs e traces"
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-jaeger/logo.png
+category: "Developer Tools"
+version: "1.76.0"
+port: 16686
+description: >-
+  O Jaeger é uma ferramenta de rastreamento distribuído que ajuda a monitorar e solucionar problemas em ambientes de microserviços.
+developer: OpenTelemetry
+website: https://www.jaegertracing.io/
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/jaegertracing/jaeger
+support: https://github.com/jaegertracing/jaeger/issues
+gallery: []
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
