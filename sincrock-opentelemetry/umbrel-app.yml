@@ -5,7 +5,6 @@ tagline: "Receba, processe e exporte dados de métricas, logs e traces"
 icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-opentelemetry/logo.png
 category: networking
 version: "0.158.0"
-port: 4500
 description: >-
   O OpenTelemetry Collector oferece um mecanismo neutro em relação a fornecedores para receber, 
   processar e exportar dados de telemetria. É compatível com OTLP, Prometheus, Jaeger e mais.
