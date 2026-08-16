@@ -1,0 +1,26 @@
+manifestVersion: 1
+id: sincrock-grafana-otel-lgtm
+name: Grafana OTel LGTM
+tagline: "Solução de observabilidade com Grafana, OpenTelemetry Collector, Prometheus, Tempo, Loki, Pyroscope e com OBI (auto-instrumentação via eBPF)"
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-grafana-otel-lgtm/logo.png
+category: "Developer Tools"
+version: "0.30.2"
+port: 3000
+description: >-
+  O Grafana OTel LGTM é uma solução de observabilidade completa que integra o Grafana, OpenTelemetry Collector, Prometheus, Tempo, Loki, Pyroscope e OBI (OpenTelemetry eBPF Instrumentation). 
+
+  Ele permite monitorar e analisar métricas, logs e rastreamentos distribuídos de aplicativos e sistemas em tempo real. 
+
+  Com uma interface intuitiva e dashboards personalizáveis, o Grafana OTel LGTM oferece insights valiosos para otimizar o desempenho e a confiabilidade das aplicações.
+developer: Grafana
+website: https://grafana.com/
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/grafana/docker-otel-lgtm
+support: https://github.com/grafana/docker-otel-lgtm/issues
+gallery: []
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: "admin"
+defaultPassword: "admin"
