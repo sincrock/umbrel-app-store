@@ -1,0 +1,22 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-grafana-otel-lgtm_server_1
+      APP_PORT: 3000 # Grafana Web UI
+    container_name: sincrock-grafana-otel-lgtm_app_proxy_1
+
+  server:
+    image: grafana/otel-lgtm:0.30.2@sha256:069e79be4fcc648b13f22ded28146f0b2d94f7f48681a55aa4995566a0bbdd02
+    container_name: sincrock-grafana-otel-lgtm_server_1
+    restart: on-failure
+    user: "0:0"
+    env_file:
+      - ${APP_DATA_DIR}/.env
+    ports:
+      - "4317:4317"   # OTLP gRPC Receiver (Envio de Telemetria)
+      - "4318:4318"   # OTLP HTTP Receiver (Envio de Telemetria)
+      - "9090:9090"   # Prometheus Backend (Opcional)
+    volumes:
+      - ${APP_DATA_DIR}/data/dashboards/custom-dashboard.json:/otel-lgtm/grafana/conf/provisioning/dashboards/custom/custom-dashboard.json:ro
+      - ${APP_DATA_DIR}/data/dashboards/dashboards-provisioning.yaml:/otel-lgtm/grafana/conf/provisioning/dashboards/custom.yaml:ro
+      - ${APP_DATA_DIR}/data/data:/data
