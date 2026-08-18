@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: sincrock-mongo
+name: Mongo
+tagline: Mongo Express + MongoDB
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-mongo/logo.png
+category: networking
+version: "1.0.2+8.3.8"
+port: 28081
+description: >-
+  Mongo Express is a web-based administrative interface for MongoDB.
+  MongoDB is a popular NoSQL database.
+  This app provides an easy way to deploy and manage MongoDB databases with a user-friendly web interface.
+developer: rtritto
+website: https://github.com/mongo-express/mongo-express
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/mongo-express/mongo-express
+support: https://github.com/mongo-express/mongo-express/issues
+gallery: []
+releaseNotes: ""
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

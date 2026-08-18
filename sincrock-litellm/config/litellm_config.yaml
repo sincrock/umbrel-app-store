@@ -5,40 +5,47 @@ model_list:
   - model_name: local-llama3.2-1b
     litellm_params:
       model: ollama/llama3.2:1b-instruct-q8_0
-      api_base: http://192.168.3.7:11434
+      api_base: http://ollama_ollama_1:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
-  - model_name: local-qwen-1.5b-coder
+  - model_name: local-qwen2.5-coder-1.5b
     litellm_params:
-      model: ollama/qwen2.5-coder:1.5b-base-q4_K_M
-      api_base: http://192.168.3.7:11434
+      model: ollama/qwen2.5-coder:1.5b-instruct-q4_K_M
+      api_base: http://ollama_ollama_1:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
   # ==========================================
   # 2. MODELOS DO OLLAMA NO SEU PC
   # ==========================================
-  - model_name: pc-llama3.1-8b
+  - model_name: pc-llava-7b
     litellm_params:
-      model: ollama/llama3.1:8b-instruct-q4_K_M
+      model: ollama/llava:7b-v1.6-mistral-q4_0
       api_base: http://192.168.31.6:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
   - model_name: pc-deepseek-r1-8b
     litellm_params:
       model: ollama/deepseek-r1:8b-0528-qwen3-q4_K_M
       api_base: http://192.168.31.6:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
-  - model_name: pc-deepseek-coder
+  - model_name: pc-llama3.1-8b
     litellm_params:
-      model: ollama/deepseek-coder:6.7b-base-q4_0
+      model: ollama/llama3.1:8b-instruct-q4_K_M
       api_base: http://192.168.31.6:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
-  - model_name: pc-qwen-7b-coder
+  - model_name: pc-deepseek-coder-6.7b
     litellm_params:
-      model: ollama/qwen2.5-coder:7b-base-q4_K_M
+      model: ollama/deepseek-coder:6.7b-instruct-q4_0
       api_base: http://192.168.31.6:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
-  - model_name: pc-llama3.2-vision
+  - model_name: pc-qwen2.5-coder-7b
     litellm_params:
-      model: ollama/llama3.2-vision:11b-instruct-q4_K_M
+      model: ollama/qwen2.5-coder:7b-instruct-q4_K_M
       api_base: http://192.168.31.6:11434
+      additional_drop_params: ["parallel_tool_calls"]
 
   # ==========================================
   # 3. MODELOS GRATUITOS NA INTERNET (CLOUD)
@@ -46,18 +53,18 @@ model_list:
   # Google Gemini Free Tier
   - model_name: gemini-flash
     litellm_params:
-      model: gemini/gemini-2.5-flash
+      model: gemini/gemini-3.6-flash
       api_key: "os.environ/GEMINI_API_KEY"
 
   - model_name: gemini-pro
     litellm_params:
-      model: gemini/gemini-2.5-pro
+      model: gemini/gemini-3.1-pro-preview
       api_key: "os.environ/GEMINI_API_KEY"
 
   # GitHub Models (Usando Token Gratuito do GitHub)
-  - model_name: github-llama-70b
+  - model_name: github-llama3.2
     litellm_params:
-      model: github/meta-llama-3.1-70b-instruct
+      model: github/meta-llama-3.2-1b-instruct
       api_key: "os.environ/GITHUB_API_KEY"
 
   # Groq Cloud (Opcional - Camada gratuita ultra rápida)

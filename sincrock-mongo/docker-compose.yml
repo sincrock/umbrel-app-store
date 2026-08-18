@@ -1,0 +1,28 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sincrock-mongo_web_1
+      APP_PORT: 28081
+    container_name: sincrock-mongo_app_proxy_1
+
+  server:
+    image: mongodb/mongodb-community-server:8.3.8-ubuntu2204-20260818T064321Z@sha256:f1a1729613fb12e59146f56dd3720a4392152b0e69d20491ffc48217727e2fe4
+    container_name: sincrock-mongo_server_1
+    restart: unless-stopped
+    env_file:
+      - ${APP_DATA_DIR}/config/.env
+    ports:
+      - "27017:27017"
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/data/db
+
+  web:
+    image: mongo-express:1.0.2-18-alpine3.18@sha256:1b23d7976f0210dbec74045c209e52fbb26d29b2e873d6c6fa3d3f0ae32c2a64
+    container_name: sincrock-mongo_web_1
+    restart: unless-stopped
+    env_file:
+      - ${APP_DATA_DIR}/config/.env
+    environment:
+      ME_CONFIG_MONGODB_SERVER: server
+    depends_on:
+      - server
