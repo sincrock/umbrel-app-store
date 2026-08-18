@@ -17,6 +17,7 @@ services:
       - DATABASE_URL=postgresql://llmadmin:SecretPass123@server-db:5432/litellm_db
     volumes:
       - ${APP_DATA_DIR}/config/litellm_config.yaml:/app/litellm_config.yaml
+    command: ["--config", "/app/litellm_config.yaml", "--port", "4000"]
     depends_on:
       server-db:
         condition: service_healthy
