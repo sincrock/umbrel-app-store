@@ -4,7 +4,7 @@ name: WAHA
 tagline: A one-click WhatsApp API
 icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-waha/logo.png
 category: networking
-version: "2026.7.2"
+version: "2026.8.1"
 port: 8992
 description: >-
   🟢 WAHA is a comprehensive WhatsApp API solution that allows developers and organizations to integrate WhatsApp communication into their own systems using a simple and efficient HTTP interface. It provides the functionality to send and receive messages, images, videos, voice notes, and documents, enabling full interaction with WhatsApp users through programmatic control. This makes it suitable for automating customer support, marketing campaigns, and chatbot workflows without manual intervention.

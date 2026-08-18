@@ -15,7 +15,6 @@ services:
     ports:
       - "4317:4317"   # OTLP gRPC Receiver (Envio de Telemetria)
       - "4318:4318"   # OTLP HTTP Receiver (Envio de Telemetria)
-      - "9090:9090"   # Prometheus Backend (Opcional)
     volumes:
       - ${APP_DATA_DIR}/data/dashboards/custom-dashboard.json:/otel-lgtm/grafana/conf/provisioning/dashboards/custom/custom-dashboard.json:ro
       - ${APP_DATA_DIR}/data/dashboards/dashboards-provisioning.yaml:/otel-lgtm/grafana/conf/provisioning/dashboards/custom.yaml:ro

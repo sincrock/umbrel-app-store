@@ -1,0 +1,23 @@
+manifestVersion: 1
+id: sincrock-litellm
+name: LITELLM
+tagline: A one-click LITELLM API
+icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-litellm/logo.png
+category: networking
+version: "2026.8.1"
+port: 8992
+description: >-
+  LITELLM is a lightweight, self-hosted API for large language models (LLMs) that allows you to run your own LLMs locally or on your server. It provides a simple and efficient way to interact with LLMs without relying on external services, ensuring privacy and control over your data. With LITELLM, you can easily integrate LLM capabilities into your applications, chatbots, or any other projects that require natural language understanding and generation.
+developer: devlikeapro
+website: https://docs.litellm.ai
+submitter: sincrock
+submission: https://github.com/getumbrel/umbrel-apps/pull/
+repo: https://github.com/BerriAI/litellm
+support: https://github.com/BerriAI/litellm/issues
+gallery: []
+releaseNotes: >-
+  - Initial release of LITELLM, a lightweight, self-hosted API for large language models (LLMs) that allows you to run your own LLMs locally or on your server. It provides a simple and efficient way to interact with LLMs without relying on external services, ensuring privacy and control over your data. With LITELLM, you can easily integrate LLM capabilities into your applications, chatbots, or any other projects that require natural language understanding and generation.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

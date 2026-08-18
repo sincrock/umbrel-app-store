@@ -1,0 +1,70 @@
+model_list:
+  # ==========================================
+  # 1. MODELOS DO OLLAMA NO PROPRIO RASPBERRY PI
+  # ==========================================
+  - model_name: local-llama3.2-1b
+    litellm_params:
+      model: ollama/llama3.2:1b-instruct-q8_0
+      api_base: http://192.168.3.7:11434
+
+  - model_name: local-qwen-1.5b-coder
+    litellm_params:
+      model: ollama/qwen2.5-coder:1.5b-base-q4_K_M
+      api_base: http://192.168.3.7:11434
+
+  # ==========================================
+  # 2. MODELOS DO OLLAMA NO SEU PC
+  # ==========================================
+  - model_name: pc-llama3.1-8b
+    litellm_params:
+      model: ollama/llama3.1:8b-instruct-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  - model_name: pc-deepseek-r1-8b
+    litellm_params:
+      model: ollama/deepseek-r1:8b-0528-qwen3-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  - model_name: pc-deepseek-coder
+    litellm_params:
+      model: ollama/deepseek-coder:6.7b-base-q4_0
+      api_base: http://192.168.31.6:11434
+
+  - model_name: pc-qwen-7b-coder
+    litellm_params:
+      model: ollama/qwen2.5-coder:7b-base-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  - model_name: pc-llama3.2-vision
+    litellm_params:
+      model: ollama/llama3.2-vision:11b-instruct-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  # ==========================================
+  # 3. MODELOS GRATUITOS NA INTERNET (CLOUD)
+  # ==========================================
+  # Google Gemini Free Tier
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: "os.environ/GEMINI_API_KEY"
+
+  - model_name: gemini-pro
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: "os.environ/GEMINI_API_KEY"
+
+  # GitHub Models (Usando Token Gratuito do GitHub)
+  - model_name: github-llama-70b
+    litellm_params:
+      model: github/meta-llama-3.1-70b-instruct
+      api_key: "os.environ/GITHUB_API_KEY"
+
+  # Groq Cloud (Opcional - Camada gratuita ultra rápida)
+  - model_name: groq-llama-70b
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: "os.environ/GROQ_API_KEY"
+
+router_settings:
+  routing_strategy: simple-shuffle

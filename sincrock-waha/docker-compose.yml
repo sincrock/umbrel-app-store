@@ -7,7 +7,7 @@ services:
     container_name: sincrock-waha_app_proxy_1
 
   server:
-    image: devlikeapro/waha:arm-2026.7.2@sha256:d5a93bd9db570955cc10d2d95d33c4f06d07b3dc0150dcdd5fb600cf9857d290
+    image: devlikeapro/waha:gows-arm-2026.8.1@sha256:123e2220ce3ac3ca83e0691ca6df0b3e655e37e6e6ceab596c8a4bb3a6d69be7
     container_name: sincrock-waha_server_1
     restart: on-failure
     user: "0:0"
