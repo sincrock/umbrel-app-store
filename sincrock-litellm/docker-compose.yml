@@ -7,7 +7,7 @@ services:
     container_name: sincrock-litellm_app_proxy_1
 
   server:
-    image: docker pull litellm/litellm-database:v1.97.0@sha256:4b3226f4ccd7793d7dca6862d3681604d7ab640d8d6285be6061fd48514e6e71
+    image: litellm/litellm-database:v1.97.0@sha256:4b3226f4ccd7793d7dca6862d3681604d7ab640d8d6285be6061fd48514e6e71
     container_name: sincrock-litellm_server_1
     restart: unless-stopped
     user: "0:0"
