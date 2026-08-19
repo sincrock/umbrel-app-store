@@ -1,15 +1,15 @@
 manifestVersion: 1
 id: sincrock-mongo
-name: Mongo
-tagline: Mongo Express + MongoDB
+name: MongoDB+
+tagline: Mongo Express + MongoDB Atlas
 icon: https://raw.githubusercontent.com/sincrock/umbrel-app-store/main/assets/sincrock-mongo/logo.png
 category: networking
 version: "1.0.2+8.3.8"
 port: 28081
 description: >-
-  Mongo Express is a web-based administrative interface for MongoDB.
-  MongoDB is a popular NoSQL database.
-  This app provides an easy way to deploy and manage MongoDB databases with a user-friendly web interface.
+  MongoDB Atlas is a cloud database service that provides a fully managed and scalable database solution. 
+  It offers features such as automated backups, monitoring, and security. 
+  Mongo Express is a web-based administrative interface for MongoDB that allows users to manage their databases, collections, and documents through a user-friendly interface.
 developer: rtritto
 website: https://github.com/mongo-express/mongo-express
 submitter: sincrock
@@ -20,5 +20,5 @@ gallery: []
 releaseNotes: ""
 dependencies: []
 path: ""
-defaultUsername: ""
-defaultPassword: ""
+defaultUsername: "admin"
+defaultPassword: "pass"
