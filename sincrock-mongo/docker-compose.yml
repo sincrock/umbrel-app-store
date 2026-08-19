@@ -6,7 +6,7 @@ services:
     container_name: sincrock-mongo_app_proxy_1
 
   server:
-    image: mongodb/mongodb-community-server:8.3.8-ubuntu2204-20260818T064321Z@sha256:f1a1729613fb12e59146f56dd3720a4392152b0e69d20491ffc48217727e2fe4
+    image: mongodb/mongodb-atlas-local:8.3.8-20260819T130153Z@sha256:3597ce32156af585890ddb4b08d0484f33d596d7ae9140a62199872185d91c41
     container_name: sincrock-mongo_server_1
     restart: unless-stopped
     env_file:
@@ -15,6 +15,7 @@ services:
       - "27017:27017"
     volumes:
       - ${APP_DATA_DIR}/data/db:/data/db
+      - ${APP_DATA_DIR}/data/mongot:/data/mongot
 
   web:
     image: mongo-express:1.0.2-18-alpine3.18@sha256:1b23d7976f0210dbec74045c209e52fbb26d29b2e873d6c6fa3d3f0ae32c2a64
@@ -23,6 +24,6 @@ services:
     env_file:
       - ${APP_DATA_DIR}/config/.env
     environment:
-      ME_CONFIG_MONGODB_SERVER: server
+      ME_CONFIG_MONGODB_SERVER: mongodb://server:27017/?directConnection=true
     depends_on:
       - server
