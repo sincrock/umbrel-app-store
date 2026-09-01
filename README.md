@@ -8,8 +8,8 @@ Repositório de aplicativos comunitários e customizados para o ecossistema **Um
 
 | Ícone | Nome do App | Descrição |
 | :---: | :--- | :--- |
-| <img src="icons/clam-av.svg" width="35" height="35"> | **ClamAV Scanner** | Antivírus open-source configurado para escanear automaticamente o armazenamento central e a pasta de downloads global do Umbrel. |
-| <img src="icons/crowdsec.svg" width="35" height="35"> | **CrowdSec** | Sistema de detecção e prevenção de intrusões (IDS/IPS) que analisa logs de apps para mitigar ataques em tempo real. |
+| <img src="assets/sincrock-clamav/logo.svg" width="35" height="35"> | **ClamAV Scanner** | Antivírus open-source configurado para escanear automaticamente o armazenamento central e a pasta de downloads global do Umbrel. |
+| <img src="assets/sincrock-crowdsec/logo.svg" width="35" height="35"> | **CrowdSec** | Sistema de detecção e prevenção de intrusões (IDS/IPS) que analisa logs de apps para mitigar ataques em tempo real. |
 
 ---
 
