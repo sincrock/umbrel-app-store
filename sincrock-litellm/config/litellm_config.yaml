@@ -1,77 +1,170 @@
 model_list:
-  # ==========================================
-  # 1. MODELOS DO OLLAMA NO PROPRIO RASPBERRY PI
-  # ==========================================
-  - model_name: local-llama3.2-1b
-    litellm_params:
-      model: ollama/llama3.2:1b-instruct-q8_0
-      api_base: http://ollama_ollama_1:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  - model_name: local-qwen2.5-coder-1.5b
-    litellm_params:
-      model: ollama/qwen2.5-coder:1.5b-instruct-q4_K_M
-      api_base: http://ollama_ollama_1:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  # ==========================================
-  # 2. MODELOS DO OLLAMA NO SEU PC
-  # ==========================================
-  - model_name: pc-llava-7b
-    litellm_params:
-      model: ollama/llava:7b-v1.6-mistral-q4_0
-      api_base: http://192.168.31.6:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  - model_name: pc-deepseek-r1-8b
-    litellm_params:
-      model: ollama/deepseek-r1:8b-0528-qwen3-q4_K_M
-      api_base: http://192.168.31.6:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  - model_name: pc-llama3.1-8b
-    litellm_params:
-      model: ollama/llama3.1:8b-instruct-q4_K_M
-      api_base: http://192.168.31.6:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  - model_name: pc-deepseek-coder-6.7b
-    litellm_params:
-      model: ollama/deepseek-coder:6.7b-instruct-q4_0
-      api_base: http://192.168.31.6:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  - model_name: pc-qwen2.5-coder-7b
-    litellm_params:
-      model: ollama/qwen2.5-coder:7b-instruct-q4_K_M
-      api_base: http://192.168.31.6:11434
-      additional_drop_params: ["parallel_tool_calls"]
-
-  # ==========================================
-  # 3. MODELOS GRATUITOS NA INTERNET (CLOUD)
-  # ==========================================
-  # Google Gemini Free Tier
-  - model_name: gemini-flash
+  # ============================================================================
+  # 1. GOOGLE GEMINI (FREE TIER - FLASH MODELS)
+  # ============================================================================
+  - model_name: gemini-3.6-flash
     litellm_params:
       model: gemini/gemini-3.6-flash
-      api_key: "os.environ/GEMINI_API_KEY"
+      api_key: os.environ/GEMINI_API_KEY
+      rpm: 15
+      tpm: 1000000
 
-  - model_name: gemini-pro
+  - model_name: gemini-3.5-flash-lite
     litellm_params:
-      model: gemini/gemini-3.1-pro-preview
-      api_key: "os.environ/GEMINI_API_KEY"
+      model: gemini/gemini-3.5-flash-lite
+      api_key: os.environ/GEMINI_API_KEY
+      rpm: 30
+      tpm: 1000000
 
-  # GitHub Models (Usando Token Gratuito do GitHub)
-  - model_name: github-llama3.2
+  # ============================================================================
+  # 2. GROQ (FREE TIER - OFICIAL DA DOCUMENTAÇÃO)
+  # ============================================================================
+  - model_name: groq-qwen-27b
     litellm_params:
-      model: github/meta-llama-3.2-1b-instruct
-      api_key: "os.environ/GITHUB_API_KEY"
+      model: groq/qwen/qwen3.6-27b
+      api_key: os.environ/GROQ_API_KEY
+      rpm: 30
+      tpm: 8000
 
-  # Groq Cloud (Opcional - Camada gratuita ultra rápida)
-  - model_name: groq-llama-70b
+  - model_name: groq-gpt-oss-120b
     litellm_params:
-      model: groq/llama-3.3-70b-versatile
-      api_key: "os.environ/GROQ_API_KEY"
+      model: groq/openai/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY
+      rpm: 30
+      tpm: 8000
 
+  - model_name: groq-gpt-oss-20b
+    litellm_params:
+      model: groq/openai/gpt-oss-20b
+      api_key: os.environ/GROQ_API_KEY
+      rpm: 30
+      tpm: 8000
+
+  # ============================================================================
+  # 4. OLLAMA: LOCAL-PI (http://ollama_ollama_1:11434)
+  # ============================================================================
+  - model_name: pi-qwen-coder
+    litellm_params:
+      model: ollama_chat/qwen2.5-coder:1.5b-instruct-q4_K_M
+      api_base: http://ollama_ollama_1:11434
+
+  - model_name: pi-llama-1b
+    litellm_params:
+      model: ollama_chat/llama3.2:1b-instruct-q8_0
+      api_base: http://ollama_ollama_1:11434
+
+  - model_name: text-embedding-nomic
+    litellm_params:
+      model: ollama/nomic-embed-text:137m-v1.5-fp16
+      api_base: http://ollama_ollama_1:11434
+    mode: embedding
+
+  - model_name: text-embedding-qwen
+    litellm_params:
+      model: ollama/qwen3-embedding:0.6b-q8_0
+      api_base: http://ollama_ollama_1:11434
+    mode: embedding
+
+  # ============================================================================
+  # 5. OLLAMA: PC-RTX (http://192.168.31.6:11434)
+  # ============================================================================
+  - model_name: rtx-llava-7b
+    litellm_params:
+      model: ollama_chat/llava:7b-v1.6-mistral-q4_0
+      api_base: http://192.168.31.6:11434
+
+  - model_name: rtx-deepseek-r1
+    litellm_params:
+      model: ollama_chat/deepseek-r1:8b-0528-qwen3-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  - model_name: rtx-llama-8b
+    litellm_params:
+      model: ollama_chat/llama3.1:8b-instruct-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  - model_name: rtx-deepseek-coder
+    litellm_params:
+      model: ollama_chat/deepseek-coder:6.7b-instruct-q4_0
+      api_base: http://192.168.31.6:11434
+
+  - model_name: rtx-qwen-coder-7b
+    litellm_params:
+      model: ollama_chat/qwen2.5-coder:7b-instruct-q4_K_M
+      api_base: http://192.168.31.6:11434
+
+  # ============================================================================
+  # 6. GRUPOS GENÉRICOS (ROUTING / FALLBACKS)
+  # ============================================================================
+  - model_name: smart-model
+    litellm_params:
+      model: gemini/gemini-3.6-flash
+      api_key: os.environ/GEMINI_API_KEY
+      order: 1
+
+  - model_name: smart-model
+    litellm_params:
+      model: groq/openai/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY
+      order: 2
+
+  - model_name: smart-model
+    litellm_params:
+      model: groq/qwen/qwen3.6-27b
+      api_key: os.environ/GROQ_API_KEY
+      order: 3
+
+  - model_name: coding-model
+    litellm_params:
+      model: ollama_chat/qwen2.5-coder:7b-instruct-q4_K_M
+      api_base: http://192.168.31.6:11434
+      order: 1
+
+  - model_name: coding-model
+    litellm_params:
+      model: groq/qwen/qwen3.6-27b
+      api_key: os.environ/GROQ_API_KEY
+      order: 2
+
+  - model_name: text-embedding-model
+    litellm_params:
+      model: ollama/nomic-embed-text:137m-v1.5-fp16
+      api_base: http://ollama_ollama_1:11434
+      order: 1
+    mode: embedding
+
+  - model_name: text-embedding-model
+    litellm_params:
+      model: ollama/qwen3-embedding:0.6b-q8_0
+      api_base: http://ollama_ollama_1:11434
+      order: 2
+    mode: embedding
+
+# ============================================================================
+# CONFIGURAÇÕES DO ROUTER & RESILIÊNCIA
+# ============================================================================
 router_settings:
-  routing_strategy: simple-shuffle
+  # Estratégia baseada em cotas e volume de requisições por minuto/dia
+  routing_strategy: usage-based-routing-v2
+
+  # Tempo limite (segundos) para cada chamada
+  timeout: 45
+
+  # Número de tentativas em cada modelo antes de acionar fallback
+  num_retries: 2
+
+  # Habilita resfriamento (cooldown) automático de modelos que estourarem o rate-limit (HTTP 429) ou caírem (HTTP 5xx)
+  enable_cool_down: true
+  cooldown_time: 60
+  allowed_fails: 2
+
+  # Fallbacks automáticos entre grupos de modelos
+  fallbacks:
+    - smart-model: ["gemini-3.5-flash-lite", "groq-qwen-27b", "rtx-llama-8b"]
+    - coding-model: ["groq-qwen-27b", "rtx-deepseek-coder", "pi-qwen-coder"]
+    - text-embedding-model: ["text-embedding-nomic", "text-embedding-qwen"]
+
+# Configurações globais do LiteLLM Proxy
+litellm_settings:
+  drop_params: true # Remove parâmetros não suportados por provedores específicos automaticamente
+  set_verbose: false

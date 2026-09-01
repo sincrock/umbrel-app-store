@@ -19,3 +19,12 @@ services:
       - ${APP_DATA_DIR}/data/dashboards/custom-dashboard.json:/otel-lgtm/grafana/conf/provisioning/dashboards/custom/custom-dashboard.json:ro
       - ${APP_DATA_DIR}/data/dashboards/dashboards-provisioning.yaml:/otel-lgtm/grafana/conf/provisioning/dashboards/custom.yaml:ro
       - ${APP_DATA_DIR}/data/data:/data
+
+  server-otel-collector-contrib:
+    image: otel/opentelemetry-collector-contrib:0.158.0-arm64@sha256:51e1afc9d762a359387723170be5cecccad2c09e73a5a2061361c62c60855ccf
+    container_name: sincrock-grafana-otel-lgtm_server-otel-collector-contrib_1
+    volumes:
+      - ${APP_DATA_DIR}/config/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    depends_on:
+      - server
